@@ -156,6 +156,34 @@
       <section class="col-md-8 card-wrapper details-card-wrapper">
         <div class="card">
 
+          {{#if resume.skills}}
+            <div class="detail" id="skills">
+              <h3 class="text-uppercase">
+                <a class="anchor-link text-muted" href="#skills">
+                  <i aria-hidden="true" class="icon-lg icon-code"></i> Skills
+                  <span class="anchor-icon" aria-hidden="true"></span>
+                </a>
+              </h3>
+
+              <ul class="list-unstyled">
+                {{#each resume.skills}}
+                  <li class="detail-item row" id="{{itemID 'skill' @index ../resume.skills.length}}">
+                    <div class="col-xs-12 detail-item-content">
+                      <a class="anchor-link item-anchor" href="#{{itemID 'skill' @index ../resume.skills.length}}">#</a>
+                      <h4>{{name}} {{#if level}}<span class="text-muted">— <em>{{level}}</em></span>{{/if}}</h4>
+
+                      {{#if keywords}}
+                        <ul class="list-inline labels">
+                          {{#keywords}}<li class="label label-keyword">{{.}}</li>{{/keywords}}
+                        </ul>
+                      {{/if}}
+                    </div>
+                  </li>
+                {{/each}}
+              </ul>
+            </div>
+          {{/if}}
+
           {{#if resume.work}}
             <div class="detail" id="experience">
               <h3 class="text-uppercase">
@@ -373,34 +401,6 @@
                         </p>
                       </div>
                     {{/if}}
-                  </li>
-                {{/each}}
-              </ul>
-            </div>
-          {{/if}}
-
-          {{#if resume.skills}}
-            <div class="detail" id="skills">
-              <h3 class="text-uppercase">
-                <a class="anchor-link text-muted" href="#skills">
-                  <i aria-hidden="true" class="icon-lg icon-code"></i> Skills
-                  <span class="anchor-icon" aria-hidden="true"></span>
-                </a>
-              </h3>
-
-              <ul class="list-unstyled">
-                {{#each resume.skills}}
-                  <li class="detail-item row" id="{{itemID 'skill' @index ../resume.skills.length}}">
-                    <div class="col-xs-12 detail-item-content">
-                      <a class="anchor-link item-anchor" href="#{{itemID 'skill' @index ../resume.skills.length}}">#</a>
-                      <h4>{{name}} {{#if level}}<span class="text-muted">— <em>{{level}}</em></span>{{/if}}</h4>
-
-                      {{#if keywords}}
-                        <ul class="list-inline labels">
-                          {{#keywords}}<li class="label label-keyword">{{.}}</li>{{/keywords}}
-                        </ul>
-                      {{/if}}
-                    </div>
                   </li>
                 {{/each}}
               </ul>
