@@ -446,7 +446,7 @@
             <div class="detail" id="publications">
               <h3 class="text-uppercase">
                 <a class="anchor-link text-muted" href="#publications">
-                  <i aria-hidden="true" class="icon-lg icon-book"></i> Publications
+                  <i aria-hidden="true" class="icon-lg icon-book"></i> Projects, Publications and Presentations
                   <span class="anchor-icon" aria-hidden="true"></span>
                 </a>
               </h3>
@@ -471,7 +471,7 @@
 
                       {{#if releaseDate}}
                         <p class="visible-xs-block text-muted">
-                          <small>Published on:&nbsp;<time datetime="{{releaseDate}}" itemprop="datePublished">{{formatMMMDDYYYY releaseDate}}</time></small>
+                          <small><time datetime="{{releaseDate}}" itemprop="datePublished">{{formatMMMDDYYYY releaseDate}}</time></small>
                         </p>
                       {{/if}}
 
@@ -481,8 +481,6 @@
                     {{#if releaseDate}}
                       <div class="col-sm-3 detail-item-sidebar text-muted text-center hidden-xs">
                         <p>
-                          <strong>Published on:</strong>
-                          <br>
                           <time datetime="{{releaseDate}}" itemprop="datePublished">{{formatMMMDDYYYY releaseDate}}</time>
                         </p>
                       </div>
